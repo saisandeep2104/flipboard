@@ -1,13 +1,4 @@
-//
-//  AFKPageFlipper.m
-//  AFKPageFlipper
-//
-//  Created by Marco Tabini on 10-10-12.
-//  Copyright 2010 AFK Studio Partnership. All rights reserved.
-//
-//  Modified by Reefaq Mohammed on 16/07/11.
- 
-//
+
 #import "AFKPageFlipper.h"
 
 
