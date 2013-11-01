@@ -27,45 +27,42 @@
 	CGSize contentViewArea = CGSizeMake((contentView.frame.size.width - 20), (contentView.frame.size.height-30));
 	
 	[userNameLabel sizeToFit];
-	//[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, (contentViewArea.width - (userImageView.frame.size.width + 10)), userNameLabel.frame.size.height)];
 	[timeStampLabel sizeToFit];
     [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)), userNameLabel.frame.size.height)];
 	[timeStampLabel sizeToFit];
 	[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
-
-	
-	//[messageLabel setFrame:CGRectMake(userImageView.frame.origin.x ,(userImageView.frame.origin.y + userImageView.frame.size.height), contentViewArea.width, contentViewArea.height - (userImageView.frame.origin.y + userImageView.frame.size.height))];
     [messageLabel setFrame:CGRectMake(someImageView.frame.origin.x ,(someImageView.frame.origin.y + someImageView.frame.size.height), contentViewArea.width, contentViewArea.height - (someImageView.frame.origin.y + someImageView.frame.size.height))];
     
-		
 	[messageLabel setText:messageModel.content];
 	messageLabel.contentMode = UITextAlignmentLeft;
-		
-//		float widthOffset = (messageLabel.frame.size.width - textSize.width)/ 2;
-//		float heightOffset = (messageLabel.frame.size.height - textSize.height)/2;
-		//[messageLabel setContentInset:UIEdgeInsetsMake(heightOffset, widthOffset, heightOffset, widthOffset)];
-
 
 }
 
 - (void) initializeFields {
-	contentView = [[UIView alloc] init];
+   
+    /*************
+    *
+    *I am trying to set the CGRectMake of the image as the height and width of the view so I make these floats. Just to make sure this would acutally adjust size I am manually setting the values of the floats. working on dynamic sizing
+    *
+    **************/
+    float talls = self.frame.size.height;
+    float wides = self.frame.size.width;
+    
+    talls = 300;
+    wides = 300;
+    
+    contentView = [[UIView alloc] init];
 	[contentView setBackgroundColor:[UIColor whiteColor]];
 	contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-/*
-	userImageView = [[UIImageView alloc] init];
-	userImageView.image = [UIImage imageNamed:messageModel.userImage];
-	[userImageView setFrame:CGRectMake(10, 10, 50, 50)];
-	[contentView addSubview:userImageView];
-    */
+
     someImageView = [[UIImageView alloc] init];
-	someImageView.image = [UIImage imageNamed:messageModel.someImage
-                           ];
-	[someImageView setFrame:CGRectMake(10, 10, 50, 50)];
+	someImageView.image = [UIImage imageNamed:messageModel.someImage];
+	[someImageView setFrame:CGRectMake(10, 10, talls, wides)];
 	[contentView addSubview:someImageView];
 
 	userNameLabel = [[UILabel alloc] init];
-	[userNameLabel setText:[NSString stringWithFormat:@"%@",messageModel.userName]];
+//  this was displaying a null value
+//	[userNameLabel setText:[NSString stringWithFormat:@"%@",messageModel.userName]];
 	userNameLabel.font =[UIFont fontWithName:@"Helvetica" size:25];
 	[userNameLabel setTextColor:RGBCOLOR(2,90,177)];
 	[userNameLabel setBackgroundColor:[UIColor clearColor]];
