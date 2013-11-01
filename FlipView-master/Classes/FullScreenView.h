@@ -37,10 +37,7 @@
 	MessageModel* messageModel;
 	UIView* contentView;
 
-	//UIImageView* userImageView;
     UIImageView* someImageView;
-	//UILabel* userNameLabel;
-	UILabel* timeStampLabel;
 	UILabel* messageLabel;
 
 	UIViewExtention* viewToOverLap;

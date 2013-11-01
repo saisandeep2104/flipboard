@@ -42,37 +42,14 @@
 		
 		contentView = [[UIView alloc] init];
 		[contentView setBackgroundColor:RGBCOLOR(243,243,243)];
-		/*
-		userImageView = [[UIImageView alloc] init];
-		[userImageView setBackgroundColor:[UIColor clearColor]];
-		[userImageView setFrame:CGRectMake(10, 10, 130, 130)];
-		[userImageView setImage:[UIImage imageNamed:@"missing-people.png"]];
-		[contentView addSubview:userImageView];
-       */
+		
         someImageView = [[UIImageView alloc]init];
         [someImageView setBackgroundColor:[UIColor clearColor]];
         [someImageView setFrame:CGRectMake(10, 10, 710, 600)];
         [someImageView setImage:[UIImage imageNamed:@"wood.jpg"]];
         [contentView addSubview:someImageView];
 		
-		/*userNameLabel = [[UILabel alloc] init];
-		userNameLabel.font =[UIFont fontWithName:@"Helvetica" size:25];
-		[userNameLabel setTextColor:RGBCOLOR(2,90,177)];
-		[userNameLabel setBackgroundColor:[UIColor clearColor]];
-		[userNameLabel setText:[NSString stringWithFormat:@"%@",messageModel.userName]];
-		//[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, 0, 0)];
-        [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, 0, 0)];
-		[contentView addSubview:userNameLabel];
-         */
 		
-		timeStampLabel = [[UILabel alloc] init];
-		[timeStampLabel setText:messageModel.createdAt];
-		timeStampLabel.font =[UIFont fontWithName:@"Helvetica" size:12];
-		[timeStampLabel setTextColor:RGBCOLOR(111,111,111)];
-		[timeStampLabel setBackgroundColor:[UIColor clearColor]];
-		//[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y, 0, 0)];
-		timeStampLabel.alpha = 0;
-		[contentView addSubview:timeStampLabel];
 		
 		scrollView = [[UIScrollView alloc] init];
 		[scrollView setBackgroundColor:[UIColor clearColor]];
@@ -111,19 +88,10 @@
 	
 		[contentView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 		CGSize contentViewArea = CGSizeMake(contentView.frame.size.width, contentView.frame.size.height);
-		
-		//[userImageView setFrame:CGRectMake(10, 10, 130, 130)];
-	
-	//	[userNameLabel sizeToFit];
-	//	[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, (contentViewArea.width - (userImageView.frame.size.width + 10)) - 30, userNameLabel.frame.size.height)];
-   // [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)) - 30, userNameLabel.frame.size.height)];
-
-		[timeStampLabel sizeToFit];
-	//	[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
 
 		[closeButton setFrame:CGRectMake(contentViewArea.width - 30, 0, 30, 30)];
 	
-		//[scrollView setFrame:CGRectMake(10, userImageView.frame.origin.y + userImageView.frame.size.height + 10, contentViewArea.width-20, contentViewArea.height - (userImageView.frame.origin.y + userImageView.frame.size.height + 10))];
+		
     [scrollView setFrame:CGRectMake(10, someImageView.frame.origin.y + someImageView.frame.size.height + 10, contentViewArea.width-20, contentViewArea.height - (someImageView.frame.origin.y + someImageView.frame.size.height + 10))];
 
 		///////////////////////////////////////////////////////////////
@@ -168,8 +136,7 @@
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:0.20];
 	[UIView setAnimationTransition:UIViewAnimationTransitionNone forView:nil cache:NO];
-	timeStampLabel.alpha = 1;
-	closeButton.alpha = 1;
+    closeButton.alpha = 1;
 	messageLabel.alpha = 1;
 	[UIView commitAnimations];
 }
@@ -178,14 +145,8 @@
 -(void) dealloc {
 	[closeButton release];
 	closeButton=nil;
-	//[userImageView release];
-	//userImageView=nil;
     [someImageView release];
 	someImageView=nil;
-	//[userNameLabel release];
-	//userNameLabel=nil;
-	[timeStampLabel release];
-	timeStampLabel=nil;
 	[messageLabel release];
 	messageLabel=nil;
 	[scrollView release];

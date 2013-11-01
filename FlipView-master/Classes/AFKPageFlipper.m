@@ -681,6 +681,7 @@
 		[self performSelector:@selector(setFlipProgress2:) withObject:dict afterDelay:0.12];
 		
 		[dict release];
+        
 		
 	}else {
 		if (setDelegate) {
