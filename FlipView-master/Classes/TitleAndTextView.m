@@ -55,9 +55,10 @@
 	[contentView setBackgroundColor:[UIColor whiteColor]];
 	contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    someImageView = [[UIImageView alloc] init];
-	someImageView.image = [UIImage imageNamed:messageModel.someImage];
-	[someImageView setFrame:CGRectMake(10, 10, talls, wides)];
+/*****  init with image sets background *****/
+    someImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:messageModel.someImage]];
+//	someImageView.image = [UIImage imageNamed:messageModel.someImage];
+//	[someImageView setFrame:CGRectMake(10, 10, talls, wides)];
 	[contentView addSubview:someImageView];
 
 	userNameLabel = [[UILabel alloc] init];
