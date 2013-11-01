@@ -26,12 +26,12 @@
 	
 	CGSize contentViewArea = CGSizeMake((contentView.frame.size.width - 20), (contentView.frame.size.height-30));
 	
-	[userNameLabel sizeToFit];
+	//[userNameLabel sizeToFit];
 	//[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, (contentViewArea.width - (userImageView.frame.size.width + 10)), userNameLabel.frame.size.height)];
 	[timeStampLabel sizeToFit];
-    [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)), userNameLabel.frame.size.height)];
+   // [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)), userNameLabel.frame.size.height)];
 	[timeStampLabel sizeToFit];
-	[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
+	//[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
 
 	
 	//[messageLabel setFrame:CGRectMake(userImageView.frame.origin.x ,(userImageView.frame.origin.y + userImageView.frame.size.height), contentViewArea.width, contentViewArea.height - (userImageView.frame.origin.y + userImageView.frame.size.height))];
@@ -61,16 +61,16 @@
     someImageView = [[UIImageView alloc] init];
 	someImageView.image = [UIImage imageNamed:messageModel.someImage
                            ];
-	[someImageView setFrame:CGRectMake(10, 10, 50, 50)];
+	[someImageView setFrame:CGRectMake(10, 10, 300, 200)];
 	[contentView addSubview:someImageView];
 
-	userNameLabel = [[UILabel alloc] init];
+	/*userNameLabel = [[UILabel alloc] init];
 	[userNameLabel setText:[NSString stringWithFormat:@"%@",messageModel.userName]];
 	userNameLabel.font =[UIFont fontWithName:@"Helvetica" size:25];
 	[userNameLabel setTextColor:RGBCOLOR(2,90,177)];
 	[userNameLabel setBackgroundColor:[UIColor clearColor]];
 	[contentView addSubview:userNameLabel];
-	
+	*/
 	
 	timeStampLabel = [[UILabel alloc] init];
 	[timeStampLabel setText:messageModel.createdAt];
@@ -109,7 +109,7 @@
 	[contentView release];
 	//[userImageView release];
     [someImageView release];
-	[userNameLabel release];
+	//[userNameLabel release];
 	[timeStampLabel release];
 	[messageLabel release];
 	[super dealloc];

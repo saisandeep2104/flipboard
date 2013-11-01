@@ -6,7 +6,7 @@
 	NSInteger messageID;
 	NSString* content;
 	NSString* createdAt;
-	NSString* userName;
+	//NSString* userName;
 	//NSString* userImage;
     NSString* someImage;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic,assign) NSInteger messageID;
 @property (nonatomic,retain) NSString* content;
 @property (nonatomic,retain) NSString* createdAt;
-@property (nonatomic,retain) NSString* userName;
+//@property (nonatomic,retain) NSString* userName;
 //@property (nonatomic,retain) NSString* userImage;
 @property (nonatomic,retain) NSString* someImage;
 

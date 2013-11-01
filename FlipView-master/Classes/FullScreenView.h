@@ -10,7 +10,7 @@
 
 	//UIImageView* userImageView;
     UIImageView* someImageView;
-	UILabel* userNameLabel;
+	//UILabel* userNameLabel;
 	UILabel* timeStampLabel;
 	UILabel* messageLabel;
 

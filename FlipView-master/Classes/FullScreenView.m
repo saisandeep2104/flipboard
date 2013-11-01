@@ -23,11 +23,11 @@
        */
         someImageView = [[UIImageView alloc]init];
         [someImageView setBackgroundColor:[UIColor clearColor]];
-        [someImageView setFrame:CGRectMake(10, 10, 230, 230)];
+        [someImageView setFrame:CGRectMake(10, 10, 710, 600)];
         [someImageView setImage:[UIImage imageNamed:@"wood.jpg"]];
         [contentView addSubview:someImageView];
 		
-		userNameLabel = [[UILabel alloc] init];
+		/*userNameLabel = [[UILabel alloc] init];
 		userNameLabel.font =[UIFont fontWithName:@"Helvetica" size:25];
 		[userNameLabel setTextColor:RGBCOLOR(2,90,177)];
 		[userNameLabel setBackgroundColor:[UIColor clearColor]];
@@ -35,13 +35,14 @@
 		//[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, 0, 0)];
         [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, 0, 0)];
 		[contentView addSubview:userNameLabel];
+         */
 		
 		timeStampLabel = [[UILabel alloc] init];
 		[timeStampLabel setText:messageModel.createdAt];
 		timeStampLabel.font =[UIFont fontWithName:@"Helvetica" size:12];
 		[timeStampLabel setTextColor:RGBCOLOR(111,111,111)];
 		[timeStampLabel setBackgroundColor:[UIColor clearColor]];
-		[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y, 0, 0)];
+		//[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y, 0, 0)];
 		timeStampLabel.alpha = 0;
 		[contentView addSubview:timeStampLabel];
 		
@@ -85,12 +86,12 @@
 		
 		//[userImageView setFrame:CGRectMake(10, 10, 130, 130)];
 	
-		[userNameLabel sizeToFit];
+	//	[userNameLabel sizeToFit];
 	//	[userNameLabel setFrame:CGRectMake(userImageView.frame.origin.x + userImageView.frame.size.width + 10, 5, (contentViewArea.width - (userImageView.frame.size.width + 10)) - 30, userNameLabel.frame.size.height)];
-    [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)) - 30, userNameLabel.frame.size.height)];
+   // [userNameLabel setFrame:CGRectMake(someImageView.frame.origin.x + someImageView.frame.size.width + 10, 5, (contentViewArea.width - (someImageView.frame.size.width + 10)) - 30, userNameLabel.frame.size.height)];
 
 		[timeStampLabel sizeToFit];
-		[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
+	//	[timeStampLabel setFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y + userNameLabel.frame.size.height, timeStampLabel.frame.size.width, timeStampLabel.frame.size.height)];
 
 		[closeButton setFrame:CGRectMake(contentViewArea.width - 30, 0, 30, 30)];
 	
@@ -153,8 +154,8 @@
 	//userImageView=nil;
     [someImageView release];
 	someImageView=nil;
-	[userNameLabel release];
-	userNameLabel=nil;
+	//[userNameLabel release];
+	//userNameLabel=nil;
 	[timeStampLabel release];
 	timeStampLabel=nil;
 	[messageLabel release];
