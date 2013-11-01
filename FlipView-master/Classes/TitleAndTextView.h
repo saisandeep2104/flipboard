@@ -6,7 +6,6 @@
 
 @interface TitleAndTextView : UIViewExtention {
 	UIView* contentView;
-	//UIImageView* userImageView;
     UIImageView* someImageView;
 	//UILabel* userNameLabel;
 	UILabel* timeStampLabel;

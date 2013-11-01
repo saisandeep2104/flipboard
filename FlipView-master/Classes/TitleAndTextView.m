@@ -37,19 +37,25 @@
 	//[messageLabel setFrame:CGRectMake(userImageView.frame.origin.x ,(userImageView.frame.origin.y + userImageView.frame.size.height), contentViewArea.width, contentViewArea.height - (userImageView.frame.origin.y + userImageView.frame.size.height))];
     [messageLabel setFrame:CGRectMake(someImageView.frame.origin.x ,(someImageView.frame.origin.y + someImageView.frame.size.height), contentViewArea.width, contentViewArea.height - (someImageView.frame.origin.y + someImageView.frame.size.height))];
     
-		
 	[messageLabel setText:messageModel.content];
 	messageLabel.contentMode = UITextAlignmentLeft;
-		
-//		float widthOffset = (messageLabel.frame.size.width - textSize.width)/ 2;
-//		float heightOffset = (messageLabel.frame.size.height - textSize.height)/2;
-		//[messageLabel setContentInset:UIEdgeInsetsMake(heightOffset, widthOffset, heightOffset, widthOffset)];
-
 
 }
 
 - (void) initializeFields {
-	contentView = [[UIView alloc] init];
+   
+    /*************
+    *
+    *I am trying to set the CGRectMake of the image as the height and width of the view so I make these floats. Just to make sure this would acutally adjust size I am manually setting the values of the floats. working on dynamic sizing
+    *
+    **************/
+    float talls = self.frame.size.height;
+    float wides = self.frame.size.width;
+    
+    talls = 300;
+    wides = 300;
+    
+    contentView = [[UIView alloc] init];
 	[contentView setBackgroundColor:[UIColor whiteColor]];
 	contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 /*
